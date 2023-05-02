@@ -1,7 +1,7 @@
 package day22_String_Builder;
 
 public class C04_accessModifier {
-    C04_accessModifier(){
+    public C04_accessModifier(){
 
     }
     private String privateStr;
@@ -43,6 +43,7 @@ public class C04_accessModifier {
     public static void main(String[] args) {
         C04_accessModifier obj=new C04_accessModifier();
         obj.protectedMethod();
+        System.out.println(protectStaticNumber);
 
     }
     public void classMemberUsage(){

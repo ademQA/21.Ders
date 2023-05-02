@@ -49,8 +49,6 @@ public class C02_StringBuilder_Method {
         StringBuilder sb5=new StringBuilder("Bu Selenium heyecandır");
         //System.out.println(sb1.compareTo(sb5)); //0
 
-
-
         System.out.println(sb1==sb5); //false
         System.out.println(sb1==sb1); //true
 
