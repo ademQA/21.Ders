@@ -25,7 +25,12 @@ public class C04_iterator {
         System.out.println(numbers);
         Iterator iterator=numbers.iterator();
 
-        iterator.next();
+        while (iterator.hasNext()){
+            iterator.next();
+            iterator.remove();
+        }
+
+       /* iterator.next();
         iterator.remove();
 
         iterator.next();
@@ -38,7 +43,7 @@ public class C04_iterator {
         iterator.next();
         iterator.remove();
 
-
+*/
         System.out.println(numbers);
     }
 }
