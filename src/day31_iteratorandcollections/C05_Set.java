@@ -8,8 +8,8 @@ public class C05_Set {
         Set<String>sinifList=new HashSet<>();
         sinifList.add("Sara");
         sinifList.add("Sevda");
-        System.out.println(sinifList);
+        System.out.println(sinifList);  //[Sevda, Sara]
         sinifList.add("Sevda");
-        System.out.println(sinifList);
+        System.out.println(sinifList);  //[Sevda, Sara]
     }
 }
