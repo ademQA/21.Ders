@@ -1,9 +1,6 @@
 package day32_Map;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class MapMethods {
     // When we give map and student number, name and surname information in the desired format.
@@ -84,4 +81,57 @@ public class MapMethods {
         studentMap.put(studentNumber,value);
         return studentMap;
     }
+    // print all students with given last name
+    public static void studentWrite(Map<Integer,String>studentMap,String surname){
+        Collection<String> valueCollection = studentMap.values();
+        int orderNo=1;
+            for (String each : valueCollection) {
+
+                String[] valueArr = each.split("-");
+                if (valueArr[1].equalsIgnoreCase(surname)) {
+                    System.out.println(orderNo + "- " +  " adı  : " + valueArr[0] + "  Soyadı  : " + valueArr[1] + " Sınıf  : " + valueArr[2] +
+                            "  Sube:  " + valueArr[3] + "  Bölüm:  " + valueArr[4]);
+                    orderNo++;
+                }
+
+            }
+
+
+    }
+    //print all students in the given branch
+    public static void allStudentWriteWithBranch(Map<Integer,String>studentMap,String branch){
+        Collection<String> valueCollection = studentMap.values();
+        int orderNo=1;
+        for (String each : valueCollection) {
+
+            String[] valueArr = each.split("-");
+            if (valueArr[3].equalsIgnoreCase(branch)) {
+                System.out.println(orderNo + "- " +  " adı  : " + valueArr[0] + "  Soyadı  : " + valueArr[1] + " Sınıf  : " + valueArr[2] +
+                        "  Sube:  " + valueArr[3] + "  Bölüm:  " + valueArr[4]);
+                orderNo++;
+            }
+
+        }
+
+    }
+
+    public static void allStudentWriteWithBranchandClass(Map<Integer, String> studentMap, String branch, String classes) {
+        Collection<String> valueCollection = studentMap.values();
+        int orderNo=1;
+        for (String each : valueCollection) {       //"Sevgi-Can-10-K-MF"
+
+            String[] valueArr = each.split("-");
+            if (valueArr[3].equalsIgnoreCase(branch)&&valueArr[2].equalsIgnoreCase(classes)) {
+                System.out.println(orderNo + "- " +  " adı  : " + valueArr[0] + "  Soyadı  : " + valueArr[1] + " Sınıf  : " + valueArr[2] +
+                        "  Sube:  " + valueArr[3] + "  Bölüm:  " + valueArr[4]);
+                orderNo++;
+            }
+
+        }
+
+    }
+
+
 }
+
+
