@@ -19,7 +19,7 @@ public class MapMethods {
     public static Map<Integer, String> studentCreate() {
 
         Map<Integer, String> studentMap = new HashMap<>();
-        studentMap.put(101, "Ali-Can-11-H-MF");
+        studentMap.put(101, "Ali-Can-12-H-MF");
         studentMap.put(102, "Veli-Cem-10-K-TM");
         studentMap.put(103, "Ali-Cem-11-K-TM");
         studentMap.put(104, "Ayse-Can-10-H-MF");
@@ -132,6 +132,64 @@ public class MapMethods {
     }
 
 
+    public static void allStudentWriteWithNumber(Map<Integer, String> studentMap) {
+        // print the student list as number-name-surname-class
+        Set<Map.Entry<Integer,String>>studentEntrySet=studentMap.entrySet();
+       // System.out.println(studentMap);
+       // System.out.println(studentEntrySet);
+        for (Map.Entry<Integer,String> eachEntry:studentEntrySet) {
+           // System.out.println(eachEntry);
+            String studentValue=eachEntry.getValue();
+            String[] studentArr=studentValue.split("-");
+            System.out.println(eachEntry.getKey()+" "+studentArr[0]+" "+studentArr[1]+" "+studentArr[2]);
+        }
+
+    }
+
+    public static Map<Integer,String> endofyearClassIncrease(Map<Integer, String> studentMap) {
+        // increase the end of the year class in the student map
+        // write graduate as class information for 12th graders
+        // if there is a graduate, no action will be taken
+        Set<Map.Entry<Integer,String>>studentEntrySet=studentMap.entrySet();
+        for (Map.Entry<Integer,String> eachEntry:studentEntrySet) {
+            String eachValue=eachEntry.getValue();
+            String[] eacValueArr=eachValue.split("-");
+            Integer clas=Integer.valueOf(eacValueArr[2]);
+            if (clas<12) {
+                clas++;
+                eacValueArr[2] = "" + clas;
+            }
+            else
+            {
+                eacValueArr[2]="Graduate";
+            }
+eachEntry.setValue(eacValueArr[0]+"-"+eacValueArr[1]+"-"+eacValueArr[2]+"-"+eacValueArr[3]+"-"+eacValueArr[4]);
+        }
+
+
+        return studentMap;
+    }
+
+
+    //capitalize all surnames on student map
+    public static Map<Integer, String> capitalizeAllSurname(Map<Integer, String> studentMap) {
+
+        Set<Map.Entry<Integer,String>>studentEntrySet=studentMap.entrySet();
+        // System.out.println(studentMap);
+        // System.out.println(studentEntrySet);
+        for (Map.Entry<Integer,String> eachEntry:studentEntrySet) {
+            // System.out.println(eachEntry);    //(101, "Ali-Can-12-H-MF");
+            String studentValue=eachEntry.getValue();
+            String[] studentArr=studentValue.split("-");
+            String surname=studentArr[1];
+            surname=surname.toUpperCase();
+            studentArr[1]=surname;
+            eachEntry.setValue(studentArr[0]+"-"+studentArr[1]+"-"+studentArr[2]+"-"+studentArr[3]+"-"+studentArr[4]);
+            //System.out.println(eachEntry.getKey()+" "+studentArr[0]+" "+studentArr[1]+" "+studentArr[2]);
+        }
+
+        return studentMap;
+    }
 }
 
 
